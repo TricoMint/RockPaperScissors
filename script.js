@@ -23,7 +23,7 @@ function computerPlay() {
     return computerSelection;
 } 
 
-const computerSelection = computerPlay();
+const computerSelection = computerSelection;
 
 const playerPrompt = prompt("Rock, Paper, or Scissors?");
 
@@ -83,5 +83,8 @@ if (win > loss) {
     console.log("You win overall!")}
 else if (win < loss) {
     console.log("You lost overall...")}
-else if (tie = 5) {console.log("How in tarnation did you manage that?")}
+else if (win==loss && tie>0) {
+    console.log("Nobody wins! Or loses!")
+}
+else if (tie == 5) {console.log("How in tarnation did you manage that?")}
 else {console.log("Yea something went wrong on my end.")}
