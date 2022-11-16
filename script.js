@@ -37,6 +37,7 @@ function bubbles() {
     console.log("wuth")
 }
 
+
 rock.addEventListener('click', ()=> {alert("buhbus");});
 
 
