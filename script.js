@@ -6,13 +6,13 @@ Create function with 3 different values
 1 is paper
 1 is scissors
 
-*/
+
     let win = 0;
     let loss = 0;
     let tie = 0;
 
 
-for (let i = 0; i < 5; i++ ) { 
+for (let i = 0; i < 1; i++ ) { 
 
 function computerPlay() {
 
@@ -23,17 +23,26 @@ function computerPlay() {
     return computerSelection;
 } 
 
-const computerSelection = computerSelection;
+const computerSelection = computerPlay();
 
-const playerPrompt = prompt("Rock, Paper, or Scissors?");
+/*const playerPrompt = prompt("Rock, Paper, or Scissors?");
 
-const playerSelection = playerPrompt.toLowerCase();
+const playerSelection = playerPrompt.toLowerCase(); */
 
- 
-    function playRound(playerSelection, computerSelection) {
+
+
+const rock = document.querySelector('#rock');
+
+function bubbles() {
+    console.log("wuth")
+}
+
+rock.addEventListener('click', ()=> {alert("buhbus");});
+
+
+
+  /*  function playRound(playerSelection, computerSelection) {
         
-
-
         if (playerSelection === "rock" && computerSelection === "rock") {
             tie = ++tie; 
            return "Rock and rock? A tie." +
@@ -83,8 +92,8 @@ if (win > loss) {
     console.log("You win overall!")}
 else if (win < loss) {
     console.log("You lost overall...")}
-else if (win==loss && tie>0) {
+else if (win==loss && tie>=0) {
     console.log("Nobody wins! Or loses!")
 }
 else if (tie == 5) {console.log("How in tarnation did you manage that?")}
-else {console.log("Yea something went wrong on my end.")}
+else {console.log("Yea something went wrong on my end.")} */
