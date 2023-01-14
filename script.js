@@ -1,3 +1,5 @@
+document.addEventListener()
+
 
 
 /*Rock Paper Scissors 
@@ -38,7 +40,7 @@ function bubbles() {
 }
 
 
-rock.addEventListener('click', ()=> {alert("buhbus");});
+rock.addEventListener('click', ()=> {alert("buhbus");}); \
 
 
 
