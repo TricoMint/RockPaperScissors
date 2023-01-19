@@ -1,4 +1,4 @@
-document.addEventListener()
+
 
 
 
@@ -31,16 +31,40 @@ const computerSelection = computerPlay();
 
 const playerSelection = playerPrompt.toLowerCase(); */
 
+/*let a = "buhbus y ankha paw";
 
+document.getElementById("wuth").innerText = `hello ${a}`; */
 
-const rock = document.querySelector('#rock');
+let rock = 0;
+let paper = 0;
+let scissors = 0;
+let youscore = 0;
+let compscore = 0;
+
+document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore}`;
+
+function test() {
+    alert("hello")
+};
+
+const btn = document.querySelector('#btn');
+btn.addEventListener('click', test);
+
+function rocktest() {
+    return 2;
+};
+
+const rockbutton = document.querySelector('#rock');
+rockbutton.addEventListener('click', rocktest);
+
+/*const rock = document.querySelector('#rock');
 
 function bubbles() {
     console.log("wuth")
 }
 
 
-rock.addEventListener('click', ()=> {alert("buhbus");}); \
+rock.addEventListener('click', ()=> {alert("buhbus");});
 
 
 

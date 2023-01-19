@@ -11,7 +11,7 @@ body {
     background-color: rgb(154, 195, 231);
 }
 
-.bigtitle {
+#bigtitle {
     text-align: center;
     font-size: 50px;
     width: 900px;
