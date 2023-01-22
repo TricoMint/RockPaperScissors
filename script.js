@@ -19,7 +19,7 @@ const paperbutton = document.querySelector('#paper');
 paperbutton.addEventListener('click', papertest);
 const scissorsbutton = document.querySelector('#scissors');
 scissorsbutton.addEventListener('click', scissorstest);
-const buttoncontainer = document.querySelector('#buttoncontainer');
+const buttoncontainer = document.getElementById('buttoncontainer');
 
 function rocktest() {
     const choices = ["rock", "paper", "scissors"]
@@ -29,7 +29,14 @@ function rocktest() {
     if (computerSelection == "scissors") {youscore = youscore + 1; sumscore = sumscore +1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
     document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;  
-    if (sumscore >= 5) {document.getElementById("scores").innerText = `fut`;}
+    if (sumscore >= 5) { if (youscore > compscore) {
+        buttoncontainer.innerText = "You Win!"}
+    else if (compscore > youscore) {
+        buttoncontainer.innerText = "You Lost!"}
+    else if (compscore==youscore && tie>=0) {
+        buttoncontainer.innerText = "A Tie!"
+    }
+    };
     return;
 };
 
@@ -41,6 +48,14 @@ function papertest() {
     if (computerSelection == "scissors") {compscore = compscore + 1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
     document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+    if (sumscore >= 5) { if (youscore > compscore) {
+        buttoncontainer.innerText = "You Win!"}
+    else if (compscore > youscore) {
+        buttoncontainer.innerText = "You Lost!"}
+    else if (win==loss && tie>=0) {
+        buttoncontainer.innerText = "A Tie!"
+    }
+    };
     return;
 };
 
@@ -51,7 +66,16 @@ function scissorstest() {
     if (computerSelection == "paper")    {youscore = youscore +1};
     if (computerSelection == "scissors") {ties = ties + 1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
-    return document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+    if (sumscore >= 5) { if (youscore > compscore) {
+        buttoncontainer.innerText = "You Win!"}
+    else if (compscore > youscore) {
+        buttoncontainer.innerText = "You Lost!"}
+    else if (win==loss && tie>=0) {
+        buttoncontainer.innerText = "A Tie!"
+    }
+    };
+    return;
 };
 
 
