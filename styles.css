@@ -1,6 +1,6 @@
 * {
     box-sizing:border-box;
-    margin: 10px;;
+    margin: 10px;
     padding: 10px;
 }
 
@@ -19,7 +19,8 @@ body {
     border: 2px solid black;
 }
 
-.buttoncontainer {
+#buttoncontainer {
+    /*visibility: hidden;*/
     margin-top: 40px;
     justify-content: space-around;
     height: 200px;
@@ -28,7 +29,7 @@ body {
     width: 600px;
 }
 
-.buttoncontainer button {
+#buttoncontainer button {
     background-color: rgb(255, 145, 0);
     border: 4px solid rgb(179, 11, 11);
     width: 150px;
@@ -39,13 +40,13 @@ body {
     font-weight: 200;
 }
 
-.buttoncontainer button:hover {
+#buttoncontainer button:hover {
     background-color: orangered;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.315);
     font-weight: 800;
 }
 
-.buttoncontainer button:active {
+#buttoncontainer button:active {
     background-color: rgb(255, 0, 0);
     color: white;
     box-shadow: 3px 3px 10px black, -3px -3px 10px black;
