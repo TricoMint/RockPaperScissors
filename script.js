@@ -40,8 +40,11 @@ let paper = 0;
 let scissors = 0;
 let youscore = 0;
 let compscore = 0;
+let ties = 0;
 
-document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore}`;
+
+
+document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
 
 function test() {
     alert("hello")
@@ -51,7 +54,13 @@ const btn = document.querySelector('#btn');
 btn.addEventListener('click', test);
 
 function rocktest() {
-    return 2;
+    const choices = ["rock", "paper", "scissors"]
+    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    if (computerSelection == "rock")     {ties = ties +1};
+    if (computerSelection == "paper")    {compscore = compscore + 1};
+    if (computerSelection == "scissors") {youscore = youscore + 1};
+    return document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+   
 };
 
 const rockbutton = document.querySelector('#rock');
