@@ -1,47 +1,10 @@
-
-
-
-
-/*Rock Paper Scissors 
-Create function with 3 different values
-1 is rock
-1 is paper
-1 is scissors
-
-
-    let win = 0;
-    let loss = 0;
-    let tie = 0;
-
-
-for (let i = 0; i < 1; i++ ) { 
-
-function computerPlay() {
-
-    const choices = ["rock", "paper", "scissors"]
-
-    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-
-    return computerSelection;
-} 
-
-const computerSelection = computerPlay();
-
-/*const playerPrompt = prompt("Rock, Paper, or Scissors?");
-
-const playerSelection = playerPrompt.toLowerCase(); */
-
-/*let a = "buhbus y ankha paw";
-
-document.getElementById("wuth").innerText = `hello ${a}`; */
-
 let rock = 0;
 let paper = 0;
 let scissors = 0;
 let youscore = 0;
 let compscore = 0;
 let ties = 0;
-
+let sumscore = 0;
 
 
 document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
@@ -50,21 +13,47 @@ function test() {
     alert("hello")
 };
 
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', test);
+const rockbutton = document.querySelector('#rock');
+rockbutton.addEventListener('click', rocktest);
+const paperbutton = document.querySelector('#paper');
+paperbutton.addEventListener('click', papertest);
+const scissorsbutton = document.querySelector('#scissors');
+scissorsbutton.addEventListener('click', scissorstest);
+const buttoncontainer = document.querySelector('#buttoncontainer');
 
 function rocktest() {
     const choices = ["rock", "paper", "scissors"]
     const computerSelection = choices[Math.floor(Math.random() * choices.length)];
-    if (computerSelection == "rock")     {ties = ties +1};
-    if (computerSelection == "paper")    {compscore = compscore + 1};
-    if (computerSelection == "scissors") {youscore = youscore + 1};
-    return document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
-   
+    if (computerSelection == "rock")     {ties = ties +1; sumscore = sumscore +1};
+    if (computerSelection == "paper")    {compscore = compscore + 1; sumscore = sumscore +1};
+    if (computerSelection == "scissors") {youscore = youscore + 1; sumscore = sumscore +1};
+    document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
+    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;  
+    if (sumscore >= 5) {document.getElementById("scores").innerText = `fut`;}
+    return;
 };
 
-const rockbutton = document.querySelector('#rock');
-rockbutton.addEventListener('click', rocktest);
+function papertest() {
+    const choices = ["rock", "paper", "scissors"]
+    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    if (computerSelection == "rock")     {youscore = youscore + 1;};
+    if (computerSelection == "paper")    {ties = ties + 1};
+    if (computerSelection == "scissors") {compscore = compscore + 1};
+    document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
+    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+    return;
+};
+
+function scissorstest() {
+    const choices = ["rock", "paper", "scissors"]
+    const computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    if (computerSelection == "rock")     {compscore = compscore +1};
+    if (computerSelection == "paper")    {youscore = youscore +1};
+    if (computerSelection == "scissors") {ties = ties + 1};
+    document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
+    return document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+};
+
 
 /*const rock = document.querySelector('#rock');
 
