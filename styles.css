@@ -13,23 +13,31 @@ body {
 
 #bigtitle {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     width: 900px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.39);
-    border: 2px solid black;
 }
 
-.buttonhide {
-    visibility: hidden;
+#reset {visibility: hidden;}
+
+#gameresult {
+    display: none;
+    font-size: 75px;
+    height: 200px;
+    width: 600px;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 50px;
 }
 
 #buttoncontainer {
+    font-size: 75px;
+    align-items: center;
     visibility: visible;
     margin-top: 40px;
     justify-content: space-around;
     height: 200px;
     display: flex;
-    border: 2px solid gray;
     width: 600px;
 }
 
@@ -62,7 +70,6 @@ body {
     flex-direction: column;
     font-size: 30px;
     display: flex;
-    border: 2px solid black;
 }
 
 .scoreboard p {
