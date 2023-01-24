@@ -20,6 +20,10 @@ paperbutton.addEventListener('click', papertest);
 const scissorsbutton = document.querySelector('#scissors');
 scissorsbutton.addEventListener('click', scissorstest);
 const buttoncontainer = document.getElementById('buttoncontainer');
+document.getElementById('reset').addEventListener('click', resetall);
+const gameresult = document.getElementById('gameresult');
+
+
 
 function rocktest() {
     const choices = ["rock", "paper", "scissors"]
@@ -28,14 +32,15 @@ function rocktest() {
     if (computerSelection == "paper")    {compscore = compscore + 1; sumscore = sumscore +1};
     if (computerSelection == "scissors") {youscore = youscore + 1; sumscore = sumscore +1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
-    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;  
-    if (sumscore >= 5) { if (youscore > compscore) {
-        buttoncontainer.innerText = "You Win!"}
-    else if (compscore > youscore) {
-        buttoncontainer.innerText = "You Lost!"}
-    else if (compscore==youscore && tie>=0) {
-        buttoncontainer.innerText = "A Tie!"
-    }
+    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`; 
+    document.getElementById("reset").style.visibility = "visible"; 
+    if (youscore || compscore == 3) {
+        if (youscore == 3) {gameresult.innerText = "You Win!"; 
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
+        else if (compscore == 3) {gameresult.innerText = "You Lost!";
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
     };
     return;
 };
@@ -48,13 +53,14 @@ function papertest() {
     if (computerSelection == "scissors") {compscore = compscore + 1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
     document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
-    if (sumscore >= 5) { if (youscore > compscore) {
-        buttoncontainer.innerText = "You Win!"}
-    else if (compscore > youscore) {
-        buttoncontainer.innerText = "You Lost!"}
-    else if (win==loss && tie>=0) {
-        buttoncontainer.innerText = "A Tie!"
-    }
+    document.getElementById("reset").style.visibility = "visible";
+    if (youscore || compscore == 3) {
+        if (youscore == 3) {gameresult.innerText = "You Win!"; 
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
+        else if (compscore == 3) {gameresult.innerText = "You Lost!";
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
     };
     return;
 };
@@ -67,16 +73,31 @@ function scissorstest() {
     if (computerSelection == "scissors") {ties = ties + 1};
     document.getElementById("comptracker").innerText = `Computer picked ${computerSelection}`;
     document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
-    if (sumscore >= 5) { if (youscore > compscore) {
-        buttoncontainer.innerText = "You Win!"}
-    else if (compscore > youscore) {
-        buttoncontainer.innerText = "You Lost!"}
-    else if (win==loss && tie>=0) {
-        buttoncontainer.innerText = "A Tie!"
-    }
+    document.getElementById("reset").style.visibility = "visible";
+    if (youscore || compscore == 3) {
+        if (youscore == 3) {gameresult.innerText = "You Win!"; 
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
+        else if (compscore == 3) {gameresult.innerText = "You Lost!";
+        document.getElementById('gameresult').style.display = "block";
+        buttoncontainer.style.display = "none";}
     };
     return;
 };
+
+function resetall() {
+    compscore = 0;
+    youscore = 0;
+    ties = 0;
+    document.getElementById("scores").innerText = `You: ${youscore} Computer: ${compscore} Ties: ${ties}`;
+    document.getElementById("comptracker").innerText = ``;
+    document.getElementById("reset").style.visibility = "hidden";
+    buttoncontainer.style.display = "block";
+    gameresult.style.display = "none";
+    return;
+}
+   
+
 
 
 /*const rock = document.querySelector('#rock');
